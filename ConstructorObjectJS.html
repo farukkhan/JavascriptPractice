@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        
+    <!-- Object created by constructor function -->
+
+        var myFunctionObject=function () {
+
+            var __r = [];
+
+            __r[0] = "test";
+
+            this.iAm = " an object";
+            this.whoIAm = function ()
+            {
+                alert("I am "+this.iAm);
+            }
+
+        }
+
+        function addEvent(to,type,fn)
+        {
+            if (document.addEventListener){
+                to.addEventListener(type, fn, false);
+            }
+            else if (document.attachEvent) {
+                to.attachEvent("on" + type, fn);
+            }
+            else {
+                to["on" + type] = fn;
+            }
+        }
+
+        function IntantiateObject()
+        {
+            var myConstructorObject = new myFunctionObject();
+            myConstructorObject.whoIAm();
+
+            addEvent(document.getElementsByName("attachButton"), "click", sayhi);
+        }
+
+        function sayhi()
+        {
+            alert("Hi! There!!!!");
+        }
+        
+     </script>
+</head>
+<body>
+    <h1 style="text-underline-position:below">Works for Constructor Object</h1>
+
+    <input type="button" onclick="IntantiateObject();" name="constructorObject" value="IntantiateObject" />
+
+    <input type="button" name="attachButton" value="Click me second" />
+</body>
+</html>

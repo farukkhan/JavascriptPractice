@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        
+        var myLiteralObject = {
+            iAm: "an object",
+            whoIAm: function () {
+               alert("I am "+this.iAm);
+            },
+            "uAre": "Samsa",
+            "whoAreU": function ()
+            {
+                alert("You are "+this.uAre);
+            }
+
+        }
+
+        function IntantiateObject()
+        {
+            myLiteralObject.whoIAm();
+            myLiteralObject.iAm = "Faruk";
+        }
+
+        function IntantiateJsonLiteralObject() {
+            myLiteralObject.whoAreU();
+            //myLiteralObject.iAm = "Faruk";
+        }
+
+   
+
+
+
+     </script>
+</head>
+<body>
+    <h1 style="text-underline-position:below">Works for Literal Object</h1>
+    <input type="button" onclick="IntantiateObject();" name="LiteralObject" value="IntantiateObject" />
+
+    <input type="button" onclick="IntantiateJsonLiteralObject();" name="JsonLiteralObject" value="JsonLiteralObject" />
+</body>
+</html>
